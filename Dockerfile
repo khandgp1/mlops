@@ -13,7 +13,7 @@ RUN apt-get install git -y
 WORKDIR /home/khandpv1
 
 # Clone Repo
-git clone https://github.com/khandgp1/mlops.git
+RUN git clone https://github.com/khandgp1/mlops.git
 
 # Entrypoint
 ENTRYPOINT bash
