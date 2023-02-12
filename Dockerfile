@@ -21,3 +21,6 @@ ENTRYPOINT bash
 # Docker Cheat Sheet
 # docker build -t ubuntu_python --rm https://github.com/khandgp1/mlops.git
 # docker run -ti --rm ubuntu_python
+
+#   References:
+# Secrets: https://medium.com/marionete/pass-secure-information-for-building-docker-images-8adeafe08355
