@@ -12,9 +12,12 @@ RUN apt-get install git -y
 # Home Directory
 WORKDIR /home/khandpv1
 
+# Clone Repo
+git clone https://github.com/khandgp1/mlops.git
+
 # Entrypoint
 ENTRYPOINT bash
 
 # Docker Cheat Sheet
-# docker build -t ubuntu_python --rm https://raw.githubusercontent.com/khandgp1/mlops/main/Dockerfile
+# docker build -t ubuntu_python --rm https://github.com/khandgp1/mlops.git
 # docker run -ti --rm ubuntu_python
