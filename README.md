@@ -8,7 +8,7 @@ that runs inside a docker container. This workspace will have an in-browser UI i
 
 Workspaces act as a pseudo VM to streamline all the boilerplate dev environment setup. **Install Docker, run a single command, and done.** You've spun someone up on your project. No SSL issues, no software or languages to install, no environments or packages to install, no project repos to clone, just immediately start adding value.
 
-**TLDR:** Effort to spin someone up onto your project is ~negligible
+**TLDR:** Eliminate the level of effort needed to spin someone up to the project's required digital infrastructure. 
 
 <details>
   <summary>This workspace might be useful when you want to:</summary>
@@ -30,5 +30,12 @@ Workspaces act as a pseudo VM to streamline all the boilerplate dev environment 
 
 ## Get Started
 
+Assuming docker is installed with a CLI terminal interface.
+```
+docker build -t ubuntu_python --rm https://github.com/khandgp1/mlops.git
+```
+```
+docker run -ti --rm ubuntu_python
+```
 
 
