@@ -13,7 +13,7 @@ RUN : \
     && apt-get clean \
     && echo "------------------------------------------------------ Add User" \
     && useradd -u 1000 khandpv1 \
-    && chown -R khandpv1 /home
+    && chown -R khandpv1 /home \
     && mkdir -p /home/khandpv1 \
     && chown -R khandpv1 /home/khandpv1 \
     && mkdir -p /home/khandpv1/apps \
