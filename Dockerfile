@@ -11,6 +11,8 @@ RUN : \
     && echo "------------------------------------------------------ Install Git" \
     && apt-get install -y git \
     && apt-get clean \
+    && echo "------------------------------------------------------ User" \
+    && useradd abc \
     && :
 
 # Home Directory
