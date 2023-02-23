@@ -1,13 +1,16 @@
 FROM ubuntu:20.04
 
 # Install Boilerplate Workspace
-RUN DEBIAN_FRONTEND=noninteractive apt-get update -y \
+RUN : \
+    && DEBIAN_FRONTEND=noninteractive apt-get update -y \
     && echo "------------------------------------------------------ Install Python" \
-    && apt-get install python3 -y \
-    && apt-get install python3-pip -y \
-    && apt-get install vim -y \
+    && apt-get install -y python3 python3-pip \
+    && echo "------------------------------------------------------ Install Editor" \
+    && apt-get install -y vim \
     && echo "------------------------------------------------------ Install Git" \
-    && apt-get install git -y
+    && apt-get install -y git \
+    && apt-get clean \
+    && :
 
 # Home Directory
 WORKDIR /home/khandpv1
