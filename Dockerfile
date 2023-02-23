@@ -17,7 +17,7 @@ RUN : \
     && mkdir -p /home/khandpv1 \
     && chown -R khandpv1 /home/khandpv1 \
     && mkdir -p /home/khandpv1/apps \
-    && chown -R abc /home/khandpv1/apps \
+    && chown -R khandpv1 /home/khandpv1/apps \
     && :
 
 # Home Directory
