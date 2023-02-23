@@ -5,18 +5,23 @@ RUN : \
     && echo "Install Boilerplate Workspace" \
     && DEBIAN_FRONTEND=noninteractive apt-get update -y \
     && echo "------------------------------------------------------ Install Python" \
-    && apt-get install -y python3 python3-pip \
+    && apt-get install -y python-is-python3 python3-pip \
     && echo "------------------------------------------------------ Install Editor" \
     && apt-get install -y vim \
     && echo "------------------------------------------------------ Install Git" \
     && apt-get install -y git \
     && apt-get clean \
-    && echo "------------------------------------------------------ User" \
-    && useradd abc \
+    && echo "------------------------------------------------------ Add User" \
+    && useradd -u 1000 khandpv1 \
+    && chown -R khandpv1 /home
+    && mkdir -p /home/khandpv1 \
+    && chown -R khandpv1 /home/khandpv1 \
+    && mkdir -p /home/khandpv1/apps \
+    && chown -R abc /home/khandpv1/apps \
     && :
 
 # Home Directory
-WORKDIR /home/khandpv1
+# WORKDIR /home/khandpv1
 
 # Clone Repo
 RUN git clone https://github.com/khandgp1/mlops.git
