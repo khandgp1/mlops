@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 # Install Boilerplate Workspace
 RUN : \
-    && echo "------------------------------------------------------ Install Boilerplate Workspace" \
+    && echo "Install Boilerplate Workspace" \
     && DEBIAN_FRONTEND=noninteractive apt-get update -y \
     && echo "------------------------------------------------------ Install Python" \
     && apt-get install -y python3 python3-pip \
