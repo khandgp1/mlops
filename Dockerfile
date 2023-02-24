@@ -19,7 +19,7 @@ RUN : \
     && cd ttyd; mkdir build; cd build \
     && cmake ..; make; make install \
     && echo "------------------------------------------------------ Add User" \
-    && useradd -u 1000 khandpv1 \
+    && useradd -u 1000 -p goober khandpv1 \
     && echo "------------------------------------------------------ Clean" \
     && apt-get -y autoremove \
     && apt-get -y clean \
