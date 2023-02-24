@@ -1,9 +1,10 @@
 FROM ubuntu:20.04
 
 # Install Boilerplate Workspace
+ARG DEBIAN_FRONTEND=noninteractive
 RUN : \
     && echo "Install Boilerplate Workspace" \
-    && DEBIAN_FRONTEND=noninteractive apt-get update -y \
+    && apt-get update -y \
     && echo "------------------------------------------------------ Install Python" \
     && apt-get install -y python-is-python3 python3-pip \
     && echo "------------------------------------------------------ Install Editor" \
@@ -19,26 +20,25 @@ RUN : \
     && mkdir -p /home/khandpv1/apps \
     && chown -R khandpv1 /home/khandpv1/apps \
     && echo "------------------------------------------------------ Install Web Terminal" \
+    && apt-get install -y build-essential cmake libjson-c-dev libwebsockets-dev \
+    && cd /home/khandpv1 \
+    && git clone https://github.com/tsl0922/ttyd.git \
+    && cd ttyd; mkdir build; cd build \
+    && cmake ..; make; make install \
+    && cd /home/khandpv1 \
     && echo "------------------------------------------------------ Clean" \
     && apt-get -y autoremove \
     && apt-get -y clean \
     && apt-get -y autoclean \
     && :
     
-RUN apt-get install -y build-essential
-# RUN apt-get install -y cmake
+# RUN apt-get install -y build-essential
+# RUN DEBIAN_FRONTEND=noninteractive apt-get install -y cmake
 # RUN apt-get install -y libjson-c-dev
 # RUN apt-get install -y libwebsockets-dev
 # RUN cd /home/khandpv1
 # RUN git clone https://github.com/tsl0922/ttyd.git
 # RUN cd ttyd; mkdir build; cd build
-
-# && apt-get install -y build-essential cmake libjson-c-dev libwebsockets-dev \
-# && cd /home/khandpv1 \
-# && git clone https://github.com/tsl0922/ttyd.git \
-# && cd ttyd; mkdir build; cd build \
-# && cmake ..; make; make install \
-# && cd /home/khandpv1 \
 
 # Home Directory
 # WORKDIR /home/khandpv1
