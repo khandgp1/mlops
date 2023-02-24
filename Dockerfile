@@ -20,11 +20,6 @@ RUN : \
     && cmake ..; make; make install \
     && echo "------------------------------------------------------ Add User" \
     && useradd -u 1000 khandpv1 \
-    && chown -R khandpv1 /home \
-    && mkdir -p /home/khandpv1 \
-    && chown -R khandpv1 /home/khandpv1 \
-    && mkdir -p /home/khandpv1/apps \
-    && chown -R khandpv1 /home/khandpv1/apps \
     && echo "------------------------------------------------------ Clean" \
     && apt-get -y autoremove \
     && apt-get -y clean \
