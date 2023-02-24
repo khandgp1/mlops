@@ -23,13 +23,15 @@ RUN : \
     && cd /home/khandpv1 \
     && git clone https://github.com/tsl0922/ttyd.git \
     && cd ttyd; mkdir build; cd build \
-    && cmake ..; make; make install \
-    && cd /home/khandpv1 \
     && echo "------------------------------------------------------ Clean" \
     && apt-get -y autoremove \
     && apt-get -y clean \
     && apt-get -y autoclean \
     && :
+    
+
+# && cmake ..; make; make install \
+# && cd /home/khandpv1 \
 
 # Home Directory
 # WORKDIR /home/khandpv1
