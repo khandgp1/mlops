@@ -19,7 +19,7 @@ RUN : \
     && mkdir -p /home/khandpv1/apps \
     && chown -R khandpv1 /home/khandpv1/apps \
     && echo "------------------------------------------------------ Install Web Terminal" \
-    && apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev \
+    && apt-get install -y build-essential cmake git libjson-c-dev libwebsockets-dev \
     && cd /home/khandpv1 \
     && git clone https://github.com/tsl0922/ttyd.git \
     && cd ttyd; mkdir build; cd build \
