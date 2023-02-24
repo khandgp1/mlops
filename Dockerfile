@@ -32,9 +32,6 @@ RUN apt-get install -y libwebsockets-dev
 RUN cd /home/khandpv1
 RUN git clone https://github.com/tsl0922/ttyd.git
 RUN cd ttyd; mkdir build; cd build
-RUN cmake
-RUN make
-RUN make install
 
 # && apt-get install -y build-essential cmake libjson-c-dev libwebsockets-dev \
 # && cd /home/khandpv1 \
