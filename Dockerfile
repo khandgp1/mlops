@@ -19,17 +19,27 @@ RUN : \
     && mkdir -p /home/khandpv1/apps \
     && chown -R khandpv1 /home/khandpv1/apps \
     && echo "------------------------------------------------------ Install Web Terminal" \
-    && apt-get install -y build-essential cmake git libjson-c-dev libwebsockets-dev \
-    && cd /home/khandpv1 \
-    && git clone https://github.com/tsl0922/ttyd.git \
-    && cd ttyd; mkdir build; cd build \
     && echo "------------------------------------------------------ Clean" \
     && apt-get -y autoremove \
     && apt-get -y clean \
     && apt-get -y autoclean \
     && :
     
+RUN apt-get install -y build-essential
+RUN apt-get install -y cmake
+RUN apt-get install -y libjson-c-dev
+RUN apt-get install -y libwebsockets-dev
+RUN cd /home/khandpv1
+RUN git clone https://github.com/tsl0922/ttyd.git
+RUN cd ttyd; mkdir build; cd build
+RUN cmake
+RUN make
+RUN make install
 
+# && apt-get install -y build-essential cmake libjson-c-dev libwebsockets-dev \
+# && cd /home/khandpv1 \
+# && git clone https://github.com/tsl0922/ttyd.git \
+# && cd ttyd; mkdir build; cd build \
 # && cmake ..; make; make install \
 # && cd /home/khandpv1 \
 
