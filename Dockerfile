@@ -19,7 +19,8 @@ RUN : \
     && cd ttyd; mkdir build; cd build \
     && cmake ..; make; make install \
     && echo "------------------------------------------------------ Add User" \
-    && useradd --create-home -u 1000 --password goober khandpv1 \
+    && useradd --create-home -u 1000 khandpv1 \
+    && echo "khandpv1:goober" | chpasswd \
     && echo "------------------------------------------------------ Clean" \
     && apt-get -y autoremove \
     && apt-get -y clean \
