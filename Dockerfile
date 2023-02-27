@@ -43,3 +43,4 @@ ENTRYPOINT bash
 
 #   References:
 # Secrets: https://medium.com/marionete/pass-secure-information-for-building-docker-images-8adeafe08355
+# TTYD: https://github.com/tsl0922/ttyd
