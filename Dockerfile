@@ -19,7 +19,7 @@ RUN : \
     && cd ttyd; mkdir build; cd build \
     && cmake ..; make; make install \
     && echo "------------------------------------------------------ Add User" \
-    && useradd -u 1000 --password goober --system khandpv1 \
+    && useradd --create-home -u 1000 --password goober khandpv1 \
     && echo "------------------------------------------------------ Clean" \
     && apt-get -y autoremove \
     && apt-get -y clean \
@@ -38,7 +38,8 @@ ENTRYPOINT bash
 # Docker Cheat Sheet
 # docker build -t ubuntu_python --rm https://github.com/khandgp1/mlops.git
 # docker run -ti --rm ubuntu_python
-# ttyd -p 8020 login bash &
+# docker run -p 8020:8020 -ti --rm ubuntu_python
+# ttyd -p 8020 login
 
 #   References:
 # Secrets: https://medium.com/marionete/pass-secure-information-for-building-docker-images-8adeafe08355
