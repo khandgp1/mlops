@@ -22,7 +22,7 @@ RUN : \
     && apt-get -y install python3.8-venv \
     && python3 -m pip install pipx \
     && python3 -m pipx ensurepath \
-    RUN echo "------------------------------------------------------ build workspace" \
+    && echo "------------------------------------------------------ build workspace" \
     && pipx install alnoda-wrk \
     && echo "------------------------------------------------------ Add User" \
     && useradd --create-home -u 1000 khandpv1 \
